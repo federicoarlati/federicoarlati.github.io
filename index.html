@@ -5,14 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Federico Arlati – Economics PhD Applicant</title>
   <style>
+  :root {
+    --background: #f4f6f9;
+    --text-color: #1c1e21;
+    --accent: #2b6cb0;
+    --card-bg: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.08);
+    --border-radius: 12px;
+  }
+
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: 900px;
     margin: 0 auto;
     padding: 20px;
     line-height: 1.6;
-    color: #222;
-    background-color: #f9f9f9;
+    color: var(--text-color);
+    background-color: var(--background);
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1 {
@@ -22,24 +32,31 @@
   }
 
   a {
-    color: #0066cc;
+    color: var(--accent);
     text-decoration: none;
+    transition: color 0.2s ease;
   }
 
   a:hover {
     text-decoration: underline;
+    color: #1a4f8b;
   }
 
   .section {
-    background: #fff;
-    padding: 20px 25px;
-    border-radius: 12px;
+    background: var(--card-bg);
+    padding: 25px 30px;
+    border-radius: var(--border-radius);
     margin-top: 30px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 4px 12px var(--shadow);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .section:hover {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
   }
 
   .small {
-    color: #777;
+    color: #555;
     font-size: 1rem;
   }
 
@@ -58,6 +75,7 @@
     border-radius: 50%;
     object-fit: cover;
     display: block;
+    border: 3px solid #e1e4e8;
   }
 
   .bio {
@@ -93,7 +111,7 @@
     }
 
     .section {
-      padding: 15px 20px;
+      padding: 20px;
     }
   }
 </style>

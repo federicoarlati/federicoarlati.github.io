@@ -20,459 +20,765 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   
   <style>
   :root {
-    /* Academic color palette */
-    --background: #fafbfc;
-    --card-bg: #ffffff;
-    --text-primary: #1a202c;
-    --text-secondary: #4a5568;
-    --text-muted: #718096;
-    --accent-primary: #1e40af;
-    --accent-hover: #1e3a8a;
-    --accent-light: #3b82f6;
-    --border-light: #e2e8f0;
-    --shadow-subtle: rgba(15, 23, 42, 0.08);
-    --shadow-medium: rgba(15, 23, 42, 0.12);
-    --shadow-strong: rgba(15, 23, 42, 0.16);
-    --border-radius: 8px;
-    --border-radius-lg: 12px;
+    /* Modern color palette */
+    --bg-primary: #ffffff;
+    --bg-secondary: #fafbfc;
+    --bg-accent: #f6f8fa;
+    --text-primary: #24292f;
+    --text-secondary: #57606a;
+    --text-muted: #8b949e;
+    --accent-primary: #0969da;
+    --accent-hover: #0550ae;
+    --accent-light: #54aeff;
+    --accent-purple: #8250df;
+    --accent-green: #1a7f37;
+    --border-color: #d0d7de;
+    --border-light: #f6f8fa;
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.1);
   }
 
   * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
   }
 
   body {
-    font-family: 'Lora', 'Georgia', serif;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 32px 20px;
-    line-height: 1.7;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
     color: var(--text-primary);
-    background-color: var(--background);
-    font-size: 16px;
+    background: var(--bg-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Typography Hierarchy */
-  h1 {
-    font-family: 'Inter', sans-serif;
-    font-size: 2.75rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-    color: var(--text-primary);
-    letter-spacing: -0.025em;
-    line-height: 1.2;
+  /* Navigation */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 0.75rem 0;
   }
 
-  h2 {
-    font-family: 'Inter', sans-serif;
-    font-size: 1.5rem;
+  .nav-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-brand {
     font-weight: 600;
-    margin-bottom: 1rem;
-    margin-top: 0;
+    font-size: 1.1rem;
     color: var(--text-primary);
-    letter-spacing: -0.015em;
+    text-decoration: none;
   }
 
-  .subtitle {
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
     color: var(--text-secondary);
-    font-size: 1.125rem;
-    font-weight: 400;
-    margin-bottom: 2rem;
-    line-height: 1.5;
-  }
-
-  /* Enhanced Links */
-  a {
-    color: var(--accent-primary);
     text-decoration: none;
     font-weight: 500;
-    transition: all 0.15s ease;
-    border-bottom: 1px solid transparent;
-  }
-
-  a:hover {
-    color: var(--accent-hover);
-    border-bottom-color: var(--accent-hover);
-    text-decoration: none;
-  }
-
-  a:focus {
-    outline: 2px solid var(--accent-light);
-    outline-offset: 2px;
-    border-radius: 2px;
-  }
-
-  /* Enhanced Sections */
-  .section {
-    background: var(--card-bg);
-    padding: 2rem 2.25rem;
-    border-radius: var(--border-radius-lg);
-    margin-top: 2rem;
-    box-shadow: 0 1px 3px var(--shadow-subtle), 0 1px 2px var(--shadow-medium);
-    border: 1px solid var(--border-light);
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+    letter-spacing: 0.02em;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
     transition: all 0.2s ease;
   }
 
-  .section:hover {
-    box-shadow: 0 4px 6px var(--shadow-subtle), 0 2px 4px var(--shadow-medium);
-    transform: translateY(-1px);
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--accent-primary);
+    background: var(--bg-accent);
   }
 
-  /* Introduction Section */
-  .intro {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+  /* Main Content */
+  .main-content {
+    margin-top: 70px;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  /* Hero Section */
+  .hero {
+    padding: 3rem 0 4rem;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  }
+
+  .hero-content {
+    display: grid;
+    grid-template-columns: 160px 1fr;
     gap: 2.5rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
+    align-items: start;
   }
 
-  .photo img {
-    width: 160px;
-    height: 160px;
+  .hero-photo img {
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    display: block;
-    border: 3px solid var(--border-light);
-    box-shadow: 0 4px 12px var(--shadow-medium);
-    transition: all 0.2s ease;
+    border: 3px solid white;
+    box-shadow: var(--shadow-md);
   }
 
-  .photo img:hover {
-    box-shadow: 0 6px 16px var(--shadow-strong);
-    transform: scale(1.02);
+  .hero-info h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
   }
 
-  .bio {
-    flex: 1;
-    font-size: 1.0625rem;
-    min-width: 300px;
+  .hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
   }
 
-  .bio p {
+  .hero-status {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-purple));
+    color: white;
+    padding: 0.375rem 0.875rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
     margin-bottom: 1.25rem;
   }
 
-  .bio p:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Contact Links Styling */
-  .contact-links {
-    margin-top: 1.5rem;
-  }
-
-  .contact-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-    padding: 0.75rem;
-    background: #f8fafc;
-    border-radius: var(--border-radius);
-    border-left: 4px solid var(--accent-primary);
-    font-size: 0.95rem;
+  .hero-bio {
+    font-size: 1rem;
+    line-height: 1.6;
     color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    max-width: 550px;
   }
 
-  .action-buttons {
+  .hero-actions {
     display: flex;
+    gap: 1rem;
     flex-wrap: wrap;
-    gap: 0.75rem;
   }
 
+  /* Buttons */
   .btn {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
-    background: var(--accent-primary);
-    color: white;
-    text-decoration: none;
-    border-radius: var(--border-radius);
-    font-family: 'Inter', sans-serif;
+    gap: 0.375rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
     font-weight: 500;
-    font-size: 0.9rem;
-    transition: all 0.15s ease;
-    border: 2px solid var(--accent-primary);
-    box-shadow: 0 2px 4px var(--shadow-subtle);
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border: 1.5px solid transparent;
   }
 
-  .btn:hover {
-    background: var(--accent-hover);
-    border-color: var(--accent-hover);
+  .btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-light));
     color: white;
-    border-bottom-color: var(--accent-hover);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 8px var(--shadow-medium);
+    border-color: transparent;
   }
 
-  .btn:focus {
-    outline: 2px solid var(--accent-light);
-    outline-offset: 2px;
+  .btn-primary:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-lg);
   }
 
   .btn-secondary {
     background: white;
     color: var(--accent-primary);
-    border-color: var(--accent-primary);
+    border-color: var(--border-color);
   }
 
   .btn-secondary:hover {
-    background: var(--accent-primary);
-    color: white;
+    border-color: var(--accent-primary);
+    background: var(--bg-accent);
+    box-shadow: var(--shadow-sm);
   }
 
   .btn-icon {
-    width: 18px;
-    height: 18px;
-    flex-shrink: 0;
+    width: 14px;
+    height: 14px;
   }
 
-  /* Lists Enhancement */
-  ul {
-    padding-left: 1.5rem;
-    margin: 1rem 0;
+  /* Contact Info */
+  .contact-info {
+    background: var(--bg-accent);
+    padding: 1.25rem;
+    border-radius: 12px;
+    margin-top: 1.5rem;
+    border: 1px solid var(--border-color);
   }
 
-  li {
-    margin-bottom: 0.5rem;
-    font-size: 1.0625rem;
-    line-height: 1.6;
+  .contact-info p {
+    margin-bottom: 0.375rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
   }
 
-  li::marker {
-    color: var(--accent-primary);
-  }
-
-  /* Research Section Enhancement */
-  .research-item {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-light);
-  }
-
-  .research-item:last-child {
-    border-bottom: none;
+  .contact-info p:last-child {
     margin-bottom: 0;
-    padding-bottom: 0;
+  }
+
+  /* Sections */
+  .section {
+    padding: 3rem 0;
+  }
+
+  .section:nth-child(even) {
+    background: var(--bg-secondary);
+  }
+
+  .section-header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Research Grid */
+  .research-grid {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .research-card {
+    background: white;
+    padding: 1.75rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+  }
+
+  .research-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .research-type {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--accent-green), var(--accent-primary));
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
   }
 
   .research-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Source Serif Pro', serif;
+    font-size: 1.25rem;
     font-weight: 600;
-    font-size: 1.125rem;
-    color: var(--text-primary);
     margin-bottom: 0.75rem;
-    display: block;
+    line-height: 1.3;
+    color: var(--text-primary);
   }
 
-  /* Coming Soon Styling */
-  .coming-soon {
-    color: var(--text-muted);
-    font-style: italic;
+  .research-description {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .research-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .research-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 0.375rem 0.875rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .research-link:hover {
+    border-color: var(--accent-primary);
+    background: var(--bg-accent);
+  }
+
+  /* Fields List */
+  .fields-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .field-item {
+    background: white;
+    padding: 1.25rem;
+    border-radius: 12px;
     text-align: center;
-    padding: 2rem;
-    background: #f8fafc;
-    border-radius: var(--border-radius);
-    border: 2px dashed var(--border-light);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+  }
+
+  .field-item:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .field-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.375rem;
+  }
+
+  .field-item p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.4;
+  }
+
+  /* Coming Soon */
+  .coming-soon {
+    background: var(--bg-accent);
+    border: 2px dashed var(--border-color);
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .coming-soon-icon {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto 0.75rem;
+    opacity: 0.4;
+  }
+
+  .coming-soon h3 {
+    font-size: 1.125rem;
+    margin-bottom: 0.375rem;
+    color: var(--text-secondary);
+  }
+
+  .coming-soon p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* Footer */
+  .footer {
+    background: var(--bg-secondary);
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+  }
+
+  .footer p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  .footer a {
+    color: var(--accent-primary);
+    text-decoration: none;
+  }
+
+  /* Mobile Navigation */
+  .mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-primary);
   }
 
   /* Responsive Design */
   @media (max-width: 768px) {
-    body {
-      padding: 20px 16px;
-      font-size: 15px;
+    .nav-container {
+      padding: 0 1rem;
     }
 
-    h1 {
-      font-size: 2.25rem;
+    .nav-links {
+      display: none;
     }
 
-    h2 {
-      font-size: 1.375rem;
+    .mobile-nav-toggle {
+      display: block;
     }
 
-    .subtitle {
-      font-size: 1rem;
+    .container {
+      padding: 0 1rem;
     }
 
-    .intro {
-      flex-direction: column;
-      text-align: center;
+    .hero {
+      padding: 2rem 0 2.5rem;
+    }
+
+    .hero-content {
+      grid-template-columns: 1fr;
       gap: 1.5rem;
+      text-align: center;
     }
 
-    .photo img {
+    .hero-photo img {
+      width: 120px;
+      height: 120px;
       margin: 0 auto;
-      width: 140px;
-      height: 140px;
     }
 
-    .bio {
+    .hero-info h1 {
+      font-size: 2rem;
+    }
+
+    .hero-subtitle {
       font-size: 1rem;
-      min-width: auto;
+    }
+
+    .hero-bio {
+      font-size: 0.95rem;
     }
 
     .section {
-      padding: 1.5rem 1.25rem;
-      margin-top: 1.5rem;
+      padding: 2.5rem 0;
     }
 
-    .contact-info {
-      flex-direction: column;
-      align-items: flex-start;
-      text-align: left;
-      gap: 0.25rem;
+    .section-title {
+      font-size: 1.75rem;
     }
 
-    .action-buttons {
+    .research-card {
+      padding: 1.5rem;
+    }
+
+    .research-title {
+      font-size: 1.125rem;
+    }
+
+    .fields-list {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-actions {
       justify-content: center;
-      width: 100%;
     }
 
-    .btn {
-      flex: 1;
-      min-width: 120px;
+    .research-links {
       justify-content: center;
-      font-size: 0.85rem;
-      padding: 0.65rem 1rem;
-    }
-
-    .contact-links {
-      padding: 1rem;
     }
   }
 
   @media (max-width: 480px) {
-    h1 {
+    .hero-info h1 {
       font-size: 2rem;
     }
 
-    .section {
-      padding: 1.25rem 1rem;
+    .btn {
+      padding: 0.675rem 1.25rem;
+      font-size: 0.85rem;
+    }
+
+    .research-card {
+      padding: 1.25rem;
     }
   }
 
-  /* Focus and accessibility improvements */
-  .section:focus-within {
-    box-shadow: 0 0 0 2px var(--accent-light);
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
   }
 
-  /* Print styles */
-  @media print {
-    body {
-      background: white;
-      color: black;
-      font-size: 12pt;
-      line-height: 1.4;
-    }
-
-    .section {
-      box-shadow: none;
-      border: 1px solid #ccc;
-      break-inside: avoid;
-    }
-
-    a {
-      color: black;
-      text-decoration: underline;
-    }
+  /* Focus styles for accessibility */
+  .btn:focus,
+  .nav-links a:focus,
+  .research-link:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
   }
 </style>
 </head>
 <body>
 
-  <h1>Federico Arlati</h1>
-  <p class="subtitle">Economics PhD Applicant | Applied Micro | Education & Labor Policy</p>
-
-  <div class="intro section">
-    <div class="photo">
-      <img src="photo.jpeg" alt="Federico Arlati">
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">Federico Arlati</a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#fields">Fields</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-nav-toggle">☰</button>
     </div>
-    <div class="bio">
-      <p>
-        Recent graduate from Bocconi University with a strong interest in applying causal inference methods to investigate the impact of public policy on education and labor market outcomes. Currently preparing applications for PhD programs in Economics, with the aim of beginning doctoral studies in Fall 2026.
-      </p>
+  </nav>
 
-      <div class="contact-links">
-        <div class="contact-info">
-          <div>📬 federico.arlati [at] unibocconi.it</div>
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-photo">
+            <img src="photo.jpeg" alt="Federico Arlati">
+          </div>
+          <div class="hero-info">
+            <h1>Federico Arlati</h1>
+            <p class="hero-subtitle">Pre-doctoral Researcher | Applied Microeconomics</p>
+            <div class="hero-status">IGIER & Dondena Research Centers | Bocconi University</div>
+            
+            <p class="hero-bio">
+              Pre-doctoral researcher at IGIER working with Prof. Julien Sauvagnat, and Research Assistant at Dondena. Focused on causal inference methods in education and labor economics.
+            </p>
+
+            <div class="hero-actions">
+              <a href="cv.pdf" target="_blank" class="btn btn-primary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14,2 14,8 20,8"></polyline>
+                  <line x1="16" y1="13" x2="8" y2="13"></line>
+                  <line x1="16" y1="17" x2="8" y2="17"></line>
+                </svg>
+                Download CV
+              </a>
+              <a href="#research" class="btn btn-secondary">View Research</a>
+              <a href="https://github.com/federicoarlati" target="_blank" class="btn btn-secondary">
+                <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                GitHub
+              </a>
+            </div>
+
+            <div class="contact-info">
+              <p><strong>Email:</strong> federico.arlati [at] unibocconi.it</p>
+              <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/federico-arlati-4230121b4" target="_blank">LinkedIn Profile</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Research</h2>
+          <p class="section-subtitle">
+            Applying causal inference to understand policy impacts on education and labor markets.
+          </p>
         </div>
 
-        <div class="action-buttons">
-          <a href="cv.pdf" target="_blank" class="btn">
+        <div class="research-grid">
+          <div class="research-card">
+            <div class="research-type">Current Position</div>
+            <h3 class="research-title">Pre-doctoral Researcher – IGIER, Bocconi University</h3>
+            <p class="research-description">
+              Working with Prof. Julien Sauvagnat on projects involving causal inference methods in economics. Research focus on automation, technological change, and their effects on labor markets and educational choices.
+            </p>
+            <div class="research-links">
+              <a href="#" class="research-link">IGIER Website</a>
+            </div>
+          </div>
+
+          <div class="research-card">
+            <div class="research-type">Research Experience</div>
+            <h3 class="research-title">Research Assistant – Dondena Centre, Bocconi University</h3>
+            <p class="research-description">
+              Research on education, aspirations, and social inclusion among Milan youth. Led survey implementation in schools, conducted data analysis, and supported neighborhood-level assessments for policy-relevant interventions.
+            </p>
+            <div class="research-links">
+              <a href="#" class="research-link">Dondena Website</a>
+            </div>
+          </div>
+
+          <div class="research-card">
+            <div class="research-type">Job Market Paper</div>
+            <h3 class="research-title">The Impact of Automation on Educational Outcomes</h3>
+            <p class="research-description">
+              How does automation exposure influence college enrollment and field choices? Using ACS micro data and Bartik instruments for automation shocks, I examine heterogeneous effects across birth cohorts and gender on long-run educational investment patterns.
+            </p>
+            <div class="research-links">
+              <a href="#" class="research-link">Paper (Coming Soon)</a>
+              <a href="#" class="research-link">Slides</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Fields -->
+    <section id="fields" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Research Interests</h2>
+          <p class="section-subtitle">
+            My research interests span across applied microeconomics with a focus on policy evaluation and causal inference.
+          </p>
+        </div>
+
+        <div class="fields-list">
+          <div class="field-item">
+            <h3>Labor Economics</h3>
+            <p>Impact of technological change and automation on employment and skill demands</p>
+          </div>
+          <div class="field-item">
+            <h3>Education Policy</h3>
+            <p>Educational responses to economic shocks and policy interventions</p>
+          </div>
+          <div class="field-item">
+            <h3>Applied Econometrics</h3>
+            <p>Causal inference methods and instrumental variable approaches</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working Papers -->
+    <section id="papers" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Working Papers</h2>
+        </div>
+
+        <div class="coming-soon">
+          <svg class="coming-soon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <path d="M14.828 14.828a4 4 0 0 1-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"/>
+          </svg>
+          <h3>Papers Coming Soon</h3>
+          <p>Working papers will be posted here as they become available.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Curriculum Vitae</h2>
+          <p class="section-subtitle">
+            Download my complete CV for detailed information about my education, research, and experience.
+          </p>
+        </div>
+
+        <div style="text-align: center;">
+          <a href="cv.pdf" target="_blank" class="btn btn-primary" style="font-size: 1.1rem; padding: 1rem 2rem;">
             <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
               <polyline points="14,2 14,8 20,8"></polyline>
               <line x1="16" y1="13" x2="8" y2="13"></line>
               <line x1="16" y1="17" x2="8" y2="17"></line>
-              <polyline points="10,9 9,9 8,9"></polyline>
             </svg>
-            Download CV
-          </a>
-
-          <a href="https://github.com/federicoarlati" target="_blank" class="btn btn-secondary">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-            </svg>
-            GitHub
-          </a>
-
-          <a href="https://linkedin.com/in/federico-arlati-4230121b4" target="_blank" class="btn btn-secondary">
-            <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-            </svg>
-            LinkedIn
+            Download CV (PDF)
           </a>
         </div>
       </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">
+            Feel free to reach out for research collaborations, academic opportunities, or general inquiries.
+          </p>
+        </div>
+
+        <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+          <div class="contact-info" style="text-align: left;">
+            <p><strong>Email:</strong> federico.arlati [at] unibocconi.it</p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/federicoarlati" target="_blank">federicoarlati</a></p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/federico-arlati-4230121b4" target="_blank">LinkedIn Profile</a></p>
+            <p><strong>Affiliation:</strong> IGIER & Dondena, Bocconi University, Milan</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 Federico Arlati. Built with <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.</p>
     </div>
-  </div>
+  </footer>
 
-  <div class="section">
-    <h2>Research</h2>
-    
-    <div class="research-item">
-      <span class="research-title">Thesis: The Impact of Automation on Educational Outcomes</span>
-      <p>Investigated how exposure to automation influences individual decisions related to college enrollment and field of study. Used micro data from the ACS and commuting zone-level automation shocks based on a Bartik instrument. Employed regression analysis to examine heterogeneity across birth cohorts and gender, with a focus on long-run changes in educational investment patterns.</p>
-    </div>
+  <script>
+    // Simple navigation highlighting
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
 
-    <div class="research-item">
-      <span class="research-title">Research Assistant – Bocconi University (Social Inclusion Lab)</span>
-      <p>Assisted with multiple research initiatives focused on education, aspirations, and social inclusion among youth in Milan. Responsibilities included survey implementation in schools, data cleaning and analysis, and literature review across topics such as educational inequality and access. Supported neighborhood-level assessments of social inclusion and contributed to the design and evaluation of policy-relevant interventions.</p>
-    </div>
-  </div>
+      function highlightNav() {
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 100;
+          if (window.pageYOffset >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
 
-  <div class="section">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Labor economics</li>
-      <li>Education policy</li>
-      <li>Applied econometrics</li>
-    </ul>
-  </div>
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      }
 
-  <div class="section">
-    <h2>Working Papers</h2>
-    <div class="coming-soon">
-      <p>Coming soon</p>
-    </div>
-  </div>
-
-  <div class="section">
-    <h2>About This Website</h2>
-    <p>
-      This site was built using <a href="https://pages.github.com" target="_blank">GitHub Pages</a>.
-    </p>
-  </div>
+      window.addEventListener('scroll', highlightNav);
+      highlightNav(); // Initial call
+    });
+  </script>
 
 </body>
 </html>

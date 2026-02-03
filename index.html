@@ -1,27 +1,37 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="google-site-verification" content="MLC8ScPr2kmBB8gIE_2zpn3nBxdAdprMMFc-M4NOveI" />
+
   <!-- SEO META TAGS -->
-  <meta name="description" content="Federico Arlati – Economics PhD Applicant interested in labor, education, and policy. Portfolio with CV, research, and academic background.">
+  <meta name="description" content="Federico Arlati – Pre-doctoral Researcher at IGIER (Bocconi University) focused on applied microeconomics, labor, education, and policy. Portfolio with CV and research background.">
   <meta name="author" content="Federico Arlati">
   <meta name="robots" content="index, follow">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://federicoarlati.github.io/">
+
   <!-- OpenGraph for social sharing -->
-  <meta property="og:title" content="Federico Arlati – Economics PhD Applicant">
-  <meta property="og:description" content="Applied microeconomics | Education & Labor | Bocconi graduate with research in policy and causal inference.">
+  <meta property="og:title" content="Federico Arlati – Pre-doctoral Researcher at IGIER">
+  <meta property="og:description" content="Applied microeconomics | Education & Labor | Bocconi University. Research in policy and causal inference.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://federicoarlati.github.io">
   <meta property="og:image" content="https://federicoarlati.github.io/photo.jpeg">
+  <meta property="og:site_name" content="Federico Arlati">
+
+  <!-- Twitter card -->
+  <meta name="twitter:card" content="summary_large_image">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Federico Arlati – Economics PhD Applicant</title>
+  <title>Federico Arlati – Pre-doctoral Researcher at IGIER</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
-  
+
   <style>
   :root {
     /* Soft pastel color palette with improved contrast */
@@ -63,6 +73,16 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Prevent fixed navbar from covering anchor targets */
+  section {
+    scroll-margin-top: 90px; /* adjust if you change navbar height */
   }
 
   /* Navigation */
@@ -373,19 +393,6 @@
     opacity: 1;
   }
 
-  .research-card:first-child {
-    grid-column: 1 / -1;
-    background: linear-gradient(135deg, var(--bg-accent), white);
-    border: 2px solid var(--accent-primary);
-    box-shadow: var(--shadow-md);
-  }
-
-  .research-card:first-child::before {
-    opacity: 1;
-    height: 6px;
-    background: var(--accent-primary);
-  }
-
   .research-type {
     display: inline-block;
     background: var(--accent-primary);
@@ -397,11 +404,6 @@
     margin-bottom: 0.875rem;
     letter-spacing: 0.02em;
     text-transform: uppercase;
-  }
-
-  .research-card:first-child .research-type {
-    background: var(--accent-secondary);
-    font-size: 0.8rem;
   }
 
   .research-title {
@@ -446,96 +448,6 @@
     transform: translateY(-1px);
   }
 
-  /* Fields List */
-  .fields-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.25rem;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-
-  .field-item {
-    background: var(--bg-card-gradient);
-    padding: 1.5rem;
-    border-radius: 16px;
-    text-align: center;
-    box-shadow: var(--shadow-sm);
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .field-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--accent-light-blue);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-  }
-
-  .field-item:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .field-item:hover::before {
-    transform: scaleX(1);
-  }
-
-  .field-item h3 {
-    font-size: 1.125rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.5rem;
-    letter-spacing: -0.01em;
-  }
-
-  .field-item p {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    font-weight: 400;
-  }
-
-  /* Coming Soon */
-  .coming-soon {
-    background: var(--bg-accent);
-    border: 2px dashed var(--accent-primary);
-    border-radius: 16px;
-    padding: 2.5rem;
-    text-align: center;
-    max-width: 400px;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .coming-soon-icon {
-    width: 40px;
-    height: 40px;
-    margin: 0 auto 0.75rem;
-    opacity: 0.6;
-    color: var(--accent-primary);
-  }
-
-  .coming-soon h3 {
-    font-size: 1.125rem;
-    margin-bottom: 0.375rem;
-    color: var(--text-secondary);
-    font-weight: 600;
-  }
-
-  .coming-soon p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-  }
-
   /* Footer */
   .footer {
     background: var(--bg-beige);
@@ -547,11 +459,6 @@
   .footer p {
     color: var(--text-muted);
     font-size: 0.9rem;
-  }
-
-  .footer a {
-    color: var(--accent-primary);
-    text-decoration: none;
   }
 
   /* Mobile Navigation */
@@ -595,11 +502,6 @@
     margin-bottom: 0.5rem;
   }
 
-  /* Smooth scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
-
   /* Focus styles for accessibility */
   .btn:focus,
   .nav-links a:focus,
@@ -627,7 +529,7 @@
       animation-iteration-count: 1 !important;
       transition-duration: 0.01ms !important;
     }
-    
+
     html {
       scroll-behavior: auto;
     }
@@ -691,20 +593,12 @@
       grid-template-columns: 1fr;
     }
 
-    .research-card:first-child {
-      grid-column: auto;
-    }
-
     .research-card {
       padding: 1.25rem;
     }
 
     .research-title {
       font-size: 1rem;
-    }
-
-    .fields-list {
-      grid-template-columns: 1fr;
     }
 
     .hero-actions {
@@ -730,7 +624,7 @@
       padding: 1.25rem;
     }
   }
-</style>
+  </style>
 </head>
 <body>
 
@@ -738,20 +632,25 @@
   <nav class="navbar">
     <div class="nav-container">
       <a href="#home" class="nav-brand">Federico Arlati</a>
+
       <ul class="nav-links">
         <li><a href="#home" class="active">Home</a></li>
         <li><a href="#research">Research</a></li>
-        <li><a href="#fields">Fields</a></li>
-        <li><a href="#cv">CV</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="mobile-nav-toggle" id="mobileNavToggle">☰</button>
+
+      <button
+        class="mobile-nav-toggle"
+        id="mobileNavToggle"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobileNavMenu"
+      >☰</button>
+
       <div class="mobile-nav-menu" id="mobileNavMenu">
         <ul class="nav-links">
           <li><a href="#home" class="active">Home</a></li>
           <li><a href="#research">Research</a></li>
-          <li><a href="#fields">Fields</a></li>
-          <li><a href="#cv">CV</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -760,7 +659,7 @@
 
   <!-- Main Content -->
   <main class="main-content">
-    
+
     <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="container">
@@ -770,15 +669,15 @@
           </div>
           <div class="hero-info">
             <h1>Federico Arlati</h1>
-            <p class="hero-subtitle">Pre-doctoral Researcher | Applied Microeconomics</p>
-            <div class="hero-status">IGIER & Dondena Research Centers | Bocconi University</div>
-            
+            <p class="hero-subtitle">Pre-doctoral Researcher at IGIER | Applied Microeconomics</p>
+            <div class="hero-status">Bocconi University | IGIER & Dondena Research Centers</div>
+
             <p class="hero-bio">
               Pre-doctoral researcher at IGIER working with Prof. Julien Sauvagnat, and Research Assistant at Dondena. Focused on causal inference methods in education and labor economics.
             </p>
 
             <div class="hero-actions">
-              <a href="cv.pdf" target="_blank" class="btn btn-primary">
+              <a href="cv.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
                   <polyline points="14,2 14,8 20,8"></polyline>
@@ -787,8 +686,10 @@
                 </svg>
                 Download CV
               </a>
+
               <a href="#research" class="btn btn-secondary">View Research</a>
-              <a href="https://github.com/federicoarlati" target="_blank" class="btn btn-secondary">
+
+              <a href="https://github.com/federicoarlati" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
                 <svg class="btn-icon" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                 </svg>
@@ -798,7 +699,7 @@
 
             <div class="contact-info">
               <p><strong>Email:</strong> federico.arlati [at] unibocconi.it</p>
-              <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/federico-arlati-4230121b4" target="_blank">LinkedIn Profile</a></p>
+              <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/federico-arlati-4230121b4" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
             </div>
           </div>
         </div>
@@ -820,7 +721,7 @@
               Working with Prof. Julien Sauvagnat on projects involving causal inference methods in economics. Research focus on automation, technological change, and their effects on labor markets and educational choices.
             </p>
             <div class="research-links">
-              <a href="https://www.igier.unibocconi.it/" target="_blank" class="research-link">IGIER Website</a>
+              <a href="https://www.igier.unibocconi.it/" target="_blank" rel="noopener noreferrer" class="research-link">IGIER Website</a>
             </div>
           </div>
 
@@ -831,68 +732,9 @@
               Research on education, aspirations, and social inclusion among Milan youth. Led survey implementation in schools, conducted data analysis, and supported neighborhood-level assessments for policy-relevant interventions.
             </p>
             <div class="research-links">
-              <a href="https://www.dondena.unibocconi.it/" target="_blank" class="research-link">Dondena Website</a>
+              <a href="https://www.dondena.unibocconi.it/" target="_blank" rel="noopener noreferrer" class="research-link">Dondena Website</a>
             </div>
           </div>
-
-          <div class="research-card">
-            <div class="research-type">Job Market Paper</div>
-            <h3 class="research-title">The Impact of Automation on Educational Outcomes</h3>
-            <p class="research-description">
-              How does automation exposure influence college enrollment and field choices? Using ACS micro data and Bartik instruments for automation shocks, I examine heterogeneous effects across birth cohorts and gender on long-run educational investment patterns.
-            </p>
-            <div class="research-links">
-              <a href="#" class="research-link">Working Paper</a>
-              <a href="#" class="research-link">Slides</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Fields Section -->
-    <section id="fields" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Research Fields</h2>
-          <p class="section-subtitle">Primary areas of interest in applied microeconomics</p>
-        </div>
-
-        <div class="fields-list">
-          <div class="field-item">
-            <h3>Labor Economics</h3>
-            <p>Employment effects of technological change, automation impacts on workforce outcomes, and labor market transitions.</p>
-          </div>
-
-          <div class="field-item">
-            <h3>Economics of Education</h3>
-            <p>Educational choices, human capital formation, and the relationship between technology and skill development.</p>
-          </div>
-
-          <div class="field-item">
-            <h3>Applied Econometrics</h3>
-            <p>Causal inference methods, instrumental variables, and quasi-experimental research designs in policy evaluation.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CV Section -->
-    <section id="cv" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">Curriculum Vitae</h2>
-        </div>
-
-        <div class="coming-soon">
-          <svg class="coming-soon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-            <polyline points="14,2 14,8 20,8"></polyline>
-            <line x1="16" y1="13" x2="8" y2="13"></line>
-            <line x1="16" y1="17" x2="8" y2="17"></line>
-          </svg>
-          <h3>CV Available for Download</h3>
-          <p>Click the "Download CV" button above to access my complete curriculum vitae.</p>
         </div>
       </div>
     </section>
@@ -907,10 +749,11 @@
 
         <div class="contact-info" style="max-width: 500px; margin: 0 auto;">
           <p><strong>Email:</strong> federico.arlati [at] unibocconi.it</p>
-          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/federico-arlati-4230121b4" target="_blank">LinkedIn Profile</a></p>
-          <p><strong>GitHub:</strong> <a href="https://github.com/federicoarlati" target="_blank">GitHub Profile</a></p>
+          <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/federico-arlati-4230121b4" target="_blank" rel="noopener noreferrer">LinkedIn Profile</a></p>
+          <p><strong>GitHub:</strong> <a href="https://github.com/federicoarlati" target="_blank" rel="noopener noreferrer">GitHub Profile</a></p>
           <p><strong>Institution:</strong> Bocconi University - IGIER & Dondena Research Centers</p>
           <p><strong>Location:</strong> Milan, Italy</p>
+          <p><strong>CV:</strong> <a href="cv.pdf" target="_blank" rel="noopener noreferrer">Download CV (PDF)</a></p>
         </div>
       </div>
     </section>
@@ -920,64 +763,71 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2024 Federico Arlati. Built with modern web technologies.</p>
+      <p>&copy; 2024 Federico Arlati.</p>
     </div>
   </footer>
 
   <script>
-    // Mobile navigation toggle
+    // Mobile navigation toggle (accessible + close on outside click / Escape)
     const mobileNavToggle = document.getElementById('mobileNavToggle');
     const mobileNavMenu = document.getElementById('mobileNavMenu');
 
+    function setMenuOpen(isOpen) {
+      mobileNavMenu.classList.toggle('active', isOpen);
+      mobileNavToggle.setAttribute('aria-expanded', String(isOpen));
+      mobileNavToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      mobileNavToggle.textContent = isOpen ? '✕' : '☰';
+    }
+
     mobileNavToggle.addEventListener('click', () => {
-      mobileNavMenu.classList.toggle('active');
+      const isOpen = mobileNavMenu.classList.contains('active');
+      setMenuOpen(!isOpen);
     });
 
     // Close mobile nav when clicking on a link
-    const mobileNavLinks = mobileNavMenu.querySelectorAll('a');
-    mobileNavLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNavMenu.classList.remove('active');
-      });
+    mobileNavMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => setMenuOpen(false));
     });
 
-    // Update active nav link on scroll
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-links a');
+    // Close when clicking outside the navbar
+    document.addEventListener('click', (e) => {
+      const clickedInsideNav = e.target.closest('.navbar');
+      if (!clickedInsideNav) setMenuOpen(false);
+    });
 
-    window.addEventListener('scroll', () => {
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') setMenuOpen(false);
+    });
+
+    // Update active nav link on scroll (desktop + mobile separately)
+    const sections = document.querySelectorAll('section');
+    const desktopNavLinks = document.querySelectorAll('.navbar > .nav-container > .nav-links a');
+    const mobileNavLinks = document.querySelectorAll('#mobileNavMenu a');
+
+    function setActive(links, currentId) {
+      links.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${currentId}`);
+      });
+    }
+
+    function updateActiveNav() {
       let current = '';
       sections.forEach(section => {
         const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (scrollY >= (sectionTop - 200)) {
-          current = section.getAttribute('id');
+        if (window.scrollY >= sectionTop - 200) {
+          current = section.id;
         }
       });
 
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-          link.classList.add('active');
-        }
-      });
-    });
+      setActive(desktopNavLinks, current);
+      setActive(mobileNavLinks, current);
+    }
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
+    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('load', updateActiveNav);
 
-    // Add loading animation for external links
+    // Lightweight "loading" feedback for external links
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
       link.addEventListener('click', function() {
         this.style.opacity = '0.7';
@@ -990,3 +840,4 @@
 
 </body>
 </html>
+
